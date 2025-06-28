@@ -13,18 +13,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- HEADER YANG DIPERBAIKI (DENGAN TOMBOL HAMBURGER) -->
     <header>
       <a href="index.html" class="header-logo">
         <img src="images/Logo.jpg" alt="Logo TNGM" height="40" />
         <h1>TAMAN NASIONAL GUNUNG MERBABU</h1>
       </a>
+      <button id="hamburger-btn" aria-label="Buka Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
+    <!-- SIDEBAR YANG DIPERBAIKI (DENGAN ID DI TOMBOL JALUR) -->
     <aside class="sidebar">
       <nav>
         <ul>
           <li class="dropdown">
-            <a href="#" class="sidebar-button">JALUR ▼</a>
+            <a href="#" id="jalur-dropdown-btn" class="sidebar-button"
+              >JALUR ▼</a
+            >
             <div class="dropdown-content">
               <a href="jalur-selo.html">Jalur Selo</a>
               <a href="jalur-suwanting.html">Jalur Suwanting</a>
@@ -120,36 +129,77 @@
       </footer>
     </main>
 
+    <!-- SCRIPT YANG SUDAH BENAR -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // --- Bagian Skrip Navigasi ---
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const sidebar = document.querySelector(".sidebar");
+        const dropdownBtn = document.getElementById("jalur-dropdown-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (hamburgerBtn && sidebar) {
+          hamburgerBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            sidebar.classList.toggle("sidebar-visible");
+          });
+        }
+        if (dropdownBtn && dropdownContent) {
+          dropdownBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            dropdownContent.classList.toggle("show");
+          });
+        }
+        window.addEventListener("click", (event) => {
+          if (
+            sidebar &&
+            sidebar.classList.contains("sidebar-visible") &&
+            !sidebar.contains(event.target) &&
+            !hamburgerBtn.contains(event.target)
+          ) {
+            sidebar.classList.remove("sidebar-visible");
+          }
+          if (
+            dropdownContent &&
+            dropdownContent.classList.contains("show") &&
+            !dropdownBtn.contains(event.target)
+          ) {
+            dropdownContent.classList.remove("show");
+          }
+        });
+
+        // --- Bagian Skrip Kalkulator Waktu ---
         const paceSelect = document.getElementById("paceSelect");
         const calculateBtn = document.getElementById("calculateBtn");
         const hasilEstimasi = document.getElementById("hasilEstimasi");
 
-        calculateBtn.addEventListener("click", () => {
-          const baseTime = 9.5;
-          const selectedPace = paceSelect.value;
-          let finalTime;
+        if (calculateBtn) {
+          calculateBtn.addEventListener("click", () => {
+            // baseTime untuk Jalur Suwanting (8-11 jam)
+            const baseTime = 9.5;
+            const selectedPace = paceSelect.value;
+            let finalTime;
 
-          switch (selectedPace) {
-            case "santai":
-              finalTime = baseTime * 1.25; 
-              break;
-            case "cepat":
-              finalTime = baseTime * 0.8; 
-              break;
-            case "normal":
-            default:
-              finalTime = baseTime;
-              break;
-          }
+            switch (selectedPace) {
+              case "santai":
+                finalTime = baseTime * 1.25;
+                break;
+              case "cepat":
+                finalTime = baseTime * 0.8;
+                break;
+              default:
+                finalTime = baseTime;
+                break;
+            }
 
-          const hours = Math.floor(finalTime);
-          const minutes = Math.round((finalTime - hours) * 60);
+            const hours = Math.floor(finalTime);
+            const minutes = Math.round((finalTime - hours) * 60);
 
-          hasilEstimasi.textContent = `Estimasi waktu pendakian Anda: sekitar ${hours} jam ${minutes} menit.`;
-          hasilEstimasi.style.color = "#2c5e4c"; 
-        });
+            hasilEstimasi.textContent = `Estimasi waktu pendakian Anda: sekitar ${hours} jam ${minutes} menit.`;
+            hasilEstimasi.style.color = "#2c5e4c";
+          });
+        }
       });
     </script>
   </body>

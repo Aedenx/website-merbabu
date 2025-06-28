@@ -207,15 +207,27 @@ footer {
   z-index: -1;
 }
 
-/* Gambar Latar untuk Setiap Halaman Detail */
-#selo-hero { background-image: url("images/selo.jpg"); }
-#suwanting-hero { background-image: url("images/suwanting.jpg"); }
-#wekas-hero { background-image: url("images/wekas.jpg"); }
-#thekelan-hero { background-image: url("images/thekelan.jpg"); }
-#cuntel-hero { background-image: url("images/cuntel.jpg"); }
-#simaksi-hero { background-image: url("images/simaksi.jpg"); }
-#kontak-hero { background-image: url("images/kontak-banner.jpg"); }
-
+#selo-hero {
+  background-image: url("images/selo.jpg");
+}
+#suwanting-hero {
+  background-image: url("images/suwanting.jpg");
+}
+#wekas-hero {
+  background-image: url("images/wekas.jpg");
+}
+#thekelan-hero {
+  background-image: url("images/thekelan.jpg");
+}
+#cuntel-hero {
+  background-image: url("images/cuntel.jpg");
+}
+#simaksi-hero {
+  background-image: url("images/simaksi.jpg");
+}
+#kontak-hero {
+  background-image: url("images/kontak-banner.jpg");
+}
 
 /* =========================================================================
    4. KONTEN UTAMA (HALAMAN DETAIL & UMUM)
@@ -483,7 +495,7 @@ footer {
   margin-top: 15px;
   font-weight: 500;
   font-size: 1.1rem;
-  min-height: 1.5em; /* Mencegah layout 'loncat' saat teks muncul */
+  min-height: 1.5em;
 }
 
 /* Tombol Salin di Halaman Kontak */
@@ -565,4 +577,39 @@ footer {
 }
 .success-content .home-button:hover {
   background-color: #3b826a;
+}
+
+/* =========================================================================
+   8. TOMBOL KONTROL AUDIO
+   ========================================================================= */
+
+.audio-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(44, 94, 76, 0.7);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.audio-control:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.audio-control svg {
+  width: 24px;
+  height: 24px;
 }
