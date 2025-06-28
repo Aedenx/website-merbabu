@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda - Taman Nasional Gunung Merbabu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="header-logo">
+        <img src="images/Logo.jpg" alt="Logo TNGM" height="40" />
+        <h1>TAMAN NASIONAL GUNUNG MERBABU</h1>
+      </a>
+      <button id="hamburger-btn" aria-label="Buka Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#" id="jalur-dropdown-btn" class="sidebar-button"
+              >JALUR ▼</a
+            >
+            <div class="dropdown-content">
+              <a href="jalur-selo.html">Jalur Selo</a>
+              <a href="jalur-suwanting.html">Jalur Suwanting</a>
+              <a href="jalur-wekas.html">Jalur Wekas</a>
+              <a href="jalur-thekelan.html">Jalur Thekelan</a>
+              <a href="jalur-cuntel.html">Jalur Cuntel</a>
+            </div>
+          </li>
+          <li><a href="simaksi.html" class="sidebar-button">SIMAKSI</a></li>
+          <li><a href="kontak.html" class="sidebar-button">KONTAK</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="hero-container">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="images/merbabu.mp4" type="video/mp4" />
+          Browser kamu tidak mendukung tag video.
+        </video>
+        <div class="hero-content">
+          <h1>Menjelajahi Pesona Gunung Merbabu</h1>
+          <p>Jawa Tengah - 3145 MDPL.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          &copy; 2025 Portal Informasi TNGM Merbabu. Dibuat oleh Deni Setiawan.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const sidebar = document.querySelector(".sidebar");
+        const dropdownBtn = document.getElementById("jalur-dropdown-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (hamburgerBtn && sidebar) {
+          hamburgerBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            sidebar.classList.toggle("sidebar-visible");
+          });
+        }
+
+        if (dropdownBtn && dropdownContent) {
+          dropdownBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            dropdownContent.classList.toggle("show");
+          });
+        }
+
+        window.addEventListener("click", (event) => {
+          if (
+            sidebar &&
+            sidebar.classList.contains("sidebar-visible") &&
+            !sidebar.contains(event.target)
+          ) {
+            sidebar.classList.remove("sidebar-visible");
+          }
+          if (
+            dropdownContent &&
+            dropdownContent.classList.contains("show") &&
+            !dropdownBtn.contains(event.target)
+          ) {
+            dropdownContent.classList.remove("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

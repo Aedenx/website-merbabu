@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Jalur Thekelan - TNGM Merbabu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="header-logo">
+        <img src="images/Logo.jpg" alt="Logo TNGM" height="40" />
+        <h1>TAMAN NASIONAL GUNUNG MERBABU</h1>
+      </a>
+    </header>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#" class="sidebar-button">JALUR ▼</a>
+            <div class="dropdown-content">
+              <a href="jalur-selo.html">Jalur Selo</a>
+              <a href="jalur-suwanting.html">Jalur Suwanting</a>
+              <a href="jalur-wekas.html">Jalur Wekas</a>
+              <a href="jalur-thekelan.html">Jalur Thekelan</a>
+              <a href="jalur-cuntel.html">Jalur Cuntel</a>
+            </div>
+          </li>
+          <li><a href="simaksi.html" class="sidebar-button">SIMAKSI</a></li>
+          <li><a href="kontak.html" class="sidebar-button">KONTAK</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="page-hero" id="thekelan-hero">
+        <div class="hero-content">
+          <h1>Jalur Pendakian Thekelan</h1>
+          <p>
+            Salah satu jalur tertua yang menawarkan pemandangan menara ikonik
+            dan suasana yang tenang.
+          </p>
+        </div>
+      </section>
+
+      <article class="detail-content">
+        <h2>Deskripsi Umum Jalur Thekelan</h2>
+        <p>
+          Thekelan adalah salah satu jalur pendakian klasik Gunung Merbabu yang
+          berada di wilayah Kopeng, Kabupaten Semarang. Jalur ini dikenal dengan
+          adanya menara pemancar telekomunikasi yang menjadi penanda khas di
+          awal pendakian. Suasananya yang lebih sepi dan rimbun menjadikan
+          Thekelan pilihan bagi pendaki yang mencari ketenangan. Jalur ini juga
+          dikenal memiliki sumber air yang cukup melimpah dibandingkan jalur
+          lain.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h3>Informasi Kunci</h3>
+            <ul>
+              <li>
+                <strong>Lokasi Basecamp:</strong> Desa Thekelan, Batur, Getasan,
+                Semarang.
+              </li>
+              <li><strong>Tingkat Kesulitan:</strong> Menengah.</li>
+              <li><strong>Estimasi Waktu Naik:</strong> 7-8 jam.</li>
+              <li>
+                <strong>Sumber Air:</strong> Melimpah hingga pos bayangan
+                sebelum puncak.
+              </li>
+              <li>
+                <strong>Atraksi Utama:</strong> Menara Pemancar, Watu Gubug,
+                Puncak Geger Sapi.
+              </li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h3>Peta Jalur</h3>
+            <img
+              src="images/Jalur-Thekelan.jpeg"
+              alt="Peta Jalur Pendakian Thekelan"
+              class="peta-jalur"
+            />
+          </div>
+        </div>
+
+        <div class="time-calculator">
+          <h4>Kalkulator Estimasi Waktu</h4>
+          <p>
+            Pilih kecepatan mendaki Anda untuk mendapatkan estimasi waktu yang
+            lebih personal.
+          </p>
+          <label for="paceSelect">Kecepatan Mendaki:</label>
+          <select id="paceSelect">
+            <option value="normal">Normal (Sesuai Estimasi Umum)</option>
+            <option value="santai">Santai (Lebih banyak istirahat)</option>
+            <option value="cepat">Cepat (Berpengalaman)</option>
+          </select>
+          <button id="calculateBtn">Hitung</button>
+          <p id="hasilEstimasi">Hasil estimasi akan muncul di sini.</p>
+        </div>
+        <h3>Rute Pendakian (Pos ke Pos)</h3>
+        <p>
+          Dari basecamp Thekelan, pendaki akan melewati area perkebunan menuju
+          Pos 1 (Pending). Perjalanan kemudian dilanjutkan melintasi hutan
+          menuju Pos 2, Pos 3 (Watu Gubug), dan Pos 4. Selepas Pos 4, jalur akan
+          bertemu dengan persimpangan dari jalur Wekas sebelum akhirnya mengarah
+          ke area puncak Gunung Merbabu.
+        </p>
+      </article>
+
+      <footer>
+        <p>
+          &copy; 2025 Portal Informasi TNGM Merbabu. Dibuat oleh Deni Setiawan.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const paceSelect = document.getElementById("paceSelect");
+        const calculateBtn = document.getElementById("calculateBtn");
+        const hasilEstimasi = document.getElementById("hasilEstimasi");
+
+        calculateBtn.addEventListener("click", () => {
+          const baseTime = 7.5;
+          const selectedPace = paceSelect.value;
+          let finalTime;
+
+          switch (selectedPace) {
+            case "santai":
+              finalTime = baseTime * 1.25; 
+              break;
+            case "cepat":
+              finalTime = baseTime * 0.8; 
+              break;
+            case "normal":
+            default:
+              finalTime = baseTime;
+              break;
+          }
+
+          const hours = Math.floor(finalTime);
+          const minutes = Math.round((finalTime - hours) * 60);
+
+          hasilEstimasi.textContent = `Estimasi waktu pendakian Anda: sekitar ${hours} jam ${minutes} menit.`;
+          hasilEstimasi.style.color = "#2c5e4c"; 
+        });
+      });
+    </script>
+  </body>
+</html>

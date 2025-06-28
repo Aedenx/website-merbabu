@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panduan SIMAKSI & Tips Mendaki - TNGM Merbabu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="header-logo">
+        <img src="images/Logo.jpg" alt="Logo TNGM" height="40" />
+        <h1>TAMAN NASIONAL GUNUNG MERBABU</h1>
+      </a>
+      <button id="hamburger-btn" aria-label="Buka Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#" id="jalur-dropdown-btn" class="sidebar-button"
+              >JALUR ▼</a
+            >
+            <div class="dropdown-content">
+              <a href="jalur-selo.html">Jalur Selo</a>
+              <a href="jalur-suwanting.html">Jalur Suwanting</a>
+              <a href="jalur-wekas.html">Jalur Wekas</a>
+              <a href="jalur-thekelan.html">Jalur Thekelan</a>
+              <a href="jalur-cuntel.html">Jalur Cuntel</a>
+            </div>
+          </li>
+          <li><a href="simaksi.html" class="sidebar-button">SIMAKSI</a></li>
+          <li><a href="kontak.html" class="sidebar-button">KONTAK</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="page-hero" id="simaksi-hero">
+        <div class="hero-content">
+          <h1>Panduan Pendaftaran SIMAKSI</h1>
+          <p>Surat Izin Masuk Kawasan Konservasi Gunung Merbabu</p>
+        </div>
+      </section>
+
+      <article class="detail-content">
+        <h2>Pendaftaran Online Wajib</h2>
+        <p>
+          Sesuai peraturan yang berlaku, seluruh calon pendaki Taman Nasional
+          Gunung Merbabu <strong>diwajibkan</strong> untuk melakukan pendaftaran
+          dan pembayaran secara online melalui situs resmi. Pihak Taman Nasional
+          **tidak melayani pendaftaran di tempat (on the spot)**.
+        </p>
+        <h3>Alur Pendaftaran Resmi</h3>
+        <ol>
+          <li>Kunjungi situs booking online resmi TNGM.</li>
+          <li>Buat akun atau login jika sudah memiliki akun.</li>
+          <li>Pilih tanggal pendakian, jalur, dan jumlah anggota rombongan.</li>
+          <li>
+            Isi data diri ketua dan seluruh anggota rombongan dengan lengkap.
+          </li>
+          <li>Lakukan pembayaran sesuai instruksi dan tarif yang berlaku.</li>
+          <li>
+            Unduh dan simpan bukti pendaftaran (e-SIMAKSI) untuk ditunjukkan di
+            basecamp.
+          </li>
+        </ol>
+        <img
+          src="images/alur-simaksi.png"
+          alt="Gambar Alur Pendaftaran SIMAKSI Online"
+          class="alur-simaksi-image"
+        />
+
+        <div
+          class="persiapan-section"
+          style="
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+          "
+        >
+          <h2>Penting: Persiapan Sebelum Mendaki</h2>
+          <p>
+            Sebelum mengisi formulir pendaftaran, pastikan Anda dan rombongan
+            sudah siap secara fisik dan logistik. Keselamatan adalah prioritas
+            utama.
+          </p>
+          <div class="checklist">
+            <h3>Daftar Perlengkapan Wajib (Checklist)</h3>
+            <ul id="gear-checklist">
+              <li>
+                <input type="checkbox" id="item1" /><label for="item1"
+                  >Tas Gunung (Carrier) & Rain Cover</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item2" /><label for="item2"
+                  >Tenda, Matras, dan Kantong Tidur (Sleeping Bag)</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item3" /><label for="item3"
+                  >Sepatu Gunung yang Nyaman</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item4" /><label for="item4"
+                  >Jaket Gunung (Tahan Angin & Air)</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item5" /><label for="item5"
+                  >Pakaian Ganti (Bahan Cepat Kering)</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item6" /><label for="item6"
+                  >Logistik (Makanan & Minuman) yang Cukup</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item7" /><label for="item7"
+                  >Peralatan Masak & Makan</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item8" /><label for="item8"
+                  >Lampu Kepala (Headlamp) & Baterai Cadangan</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item9" /><label for="item9"
+                  >P3K / Obat-obatan Pribadi</label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="item10" /><label for="item10"
+                  >Jas Hujan / Ponco</label
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-pendaftaran">
+          <h2>Formulir Pendaftaran Online</h2>
+          <p>
+            Setelah memastikan semua persiapan selesai, silakan isi formulir di
+            bawah ini dengan data yang benar dan valid.
+          </p>
+          <form id="pendaftaranForm" novalidate>
+            <div class="form-group">
+              <label for="namaLengkap">Nama Lengkap Ketua</label>
+              <input type="text" id="namaLengkap" name="namaLengkap" required />
+              <div class="error-message" id="namaError"></div>
+            </div>
+            <div class="form-group">
+              <label for="email">Alamat Email</label>
+              <input type="email" id="email" name="email" required />
+              <div class="error-message" id="emailError"></div>
+            </div>
+            <div class="form-group">
+              <label for="jalur">Pilih Jalur Pendakian</label>
+              <select id="jalur" name="jalur" required>
+                <option value="">-- Pilih Jalur --</option>
+                <option value="selo">Selo</option>
+                <option value="suwanting">Suwanting</option>
+                <option value="wekas">Wekas</option>
+                <option value="thekelan">Thekelan</option>
+                <option value="cuntel">Cuntel</option>
+              </select>
+              <div class="error-message" id="jalurError"></div>
+            </div>
+            <div class="form-group">
+              <label for="tanggalNaik">Tanggal Naik</label>
+              <input type="date" id="tanggalNaik" name="tanggalNaik" required />
+              <div class="error-message" id="tanggalError"></div>
+            </div>
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="setuju" name="setuju" required />
+              <label for="setuju"
+                >Saya telah membaca dan menyetujui semua syarat, ketentuan, dan
+                persiapan yang dibutuhkan.</label
+              >
+            </div>
+            <div class="error-message" id="setujuError"></div>
+            <button type="submit" class="form-button">Kirim Pendaftaran</button>
+          </form>
+        </div>
+      </article>
+
+      <footer>
+        <p>
+          &copy; 2025 Portal Informasi TNGM Merbabu. Dibuat oleh Deni Setiawan.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const sidebar = document.querySelector(".sidebar");
+        const dropdownBtn = document.getElementById("jalur-dropdown-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (hamburgerBtn && sidebar) {
+          hamburgerBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            sidebar.classList.toggle("sidebar-visible");
+          });
+        }
+        if (dropdownBtn && dropdownContent) {
+          dropdownBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            dropdownContent.classList.toggle("show");
+          });
+        }
+        window.addEventListener("click", (event) => {
+          if (
+            sidebar &&
+            sidebar.classList.contains("sidebar-visible") &&
+            !sidebar.contains(event.target) &&
+            !hamburgerBtn.contains(event.target)
+          ) {
+            sidebar.classList.remove("sidebar-visible");
+          }
+          if (
+            dropdownContent &&
+            dropdownContent.classList.contains("show") &&
+            !dropdownBtn.contains(event.target)
+          ) {
+            dropdownContent.classList.remove("show");
+          }
+        });
+
+        const checklist = document.getElementById("gear-checklist");
+        if (checklist) {
+          checklist.addEventListener("change", (event) => {
+            if (event.target.type === "checkbox") {
+              const label = event.target.nextElementSibling;
+              if (event.target.checked) {
+                label.classList.add("checked");
+              } else {
+                label.classList.remove("checked");
+              }
+            }
+          });
+        }
+
+        const pendaftaranForm = document.getElementById("pendaftaranForm");
+        if (pendaftaranForm) {
+          const namaInput = document.getElementById("namaLengkap");
+          const emailInput = document.getElementById("email");
+          const jalurSelect = document.getElementById("jalur");
+          const tanggalInput = document.getElementById("tanggalNaik");
+          const setujuCheckbox = document.getElementById("setuju");
+          const namaError = document.getElementById("namaError");
+          const emailError = document.getElementById("emailError");
+          const jalurError = document.getElementById("jalurError");
+          const tanggalError = document.getElementById("tanggalError");
+          const setujuError = document.getElementById("setujuError");
+
+          const validateNama = () => {
+            if (namaInput.value.trim() === "") {
+              namaError.textContent = "Nama lengkap wajib diisi.";
+              return false;
+            }
+            namaError.textContent = "";
+            return true;
+          };
+          const validateEmail = () => {
+            const p = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailInput.value.trim() === "") {
+              emailError.textContent = "Alamat email wajib diisi.";
+              return false;
+            } else if (!p.test(emailInput.value)) {
+              emailError.textContent = "Format email tidak valid.";
+              return false;
+            }
+            emailError.textContent = "";
+            return true;
+          };
+          const validateJalur = () => {
+            if (jalurSelect.value === "") {
+              jalurError.textContent = "Silakan pilih jalur pendakian.";
+              return false;
+            }
+            jalurError.textContent = "";
+            return true;
+          };
+          const validateTanggal = () => {
+            const t = new Date(tanggalInput.value);
+            const h = new Date();
+            h.setHours(0, 0, 0, 0);
+            if (tanggalInput.value === "") {
+              tanggalError.textContent = "Tanggal naik wajib diisi.";
+              return false;
+            } else if (t < h) {
+              tanggalError.textContent =
+                "Tanggal naik tidak boleh di masa lalu.";
+              return false;
+            }
+            tanggalError.textContent = "";
+            return true;
+          };
+          const validateSetuju = () => {
+            if (!setujuCheckbox.checked) {
+              setujuError.textContent =
+                "Anda harus menyetujui syarat dan ketentuan.";
+              return false;
+            }
+            setujuError.textContent = "";
+            return true;
+          };
+
+          namaInput.addEventListener("blur", validateNama);
+          emailInput.addEventListener("blur", validateEmail);
+          jalurSelect.addEventListener("change", validateJalur);
+          tanggalInput.addEventListener("change", validateTanggal);
+          setujuCheckbox.addEventListener("change", validateSetuju);
+
+          pendaftaranForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const isNamaValid = validateNama();
+            const isEmailValid = validateEmail();
+            const isJalurValid = validateJalur();
+            const isTanggalValid = validateTanggal();
+            const isSetujuValid = validateSetuju();
+
+            if (
+              isNamaValid &&
+              isEmailValid &&
+              isJalurValid &&
+              isTanggalValid &&
+              isSetujuValid
+            ) {
+              window.location.href = "pendaftaran-berhasil.html";
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

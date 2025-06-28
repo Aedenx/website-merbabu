@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - TNGM Merbabu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="header-logo">
+        <img src="images/Logo.jpg" alt="Logo TNGM" height="40" />
+        <h1>TAMAN NASIONAL GUNUNG MERBABU</h1>
+      </a>
+      <button id="hamburger-btn" aria-label="Buka Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#" id="jalur-dropdown-btn" class="sidebar-button"
+              >JALUR ▼</a
+            >
+            <div class="dropdown-content">
+              <a href="jalur-selo.html">Jalur Selo</a>
+              <a href="jalur-suwanting.html">Jalur Suwanting</a>
+              <a href="jalur-wekas.html">Jalur Wekas</a>
+              <a href="jalur-thekelan.html">Jalur Thekelan</a>
+              <a href="jalur-cuntel.html">Jalur Cuntel</a>
+            </div>
+          </li>
+          <li><a href="simaksi.html" class="sidebar-button">SIMAKSI</a></li>
+          <li><a href="kontak.html" class="sidebar-button">KONTAK</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="page-hero" id="kontak-hero">
+        <div class="hero-content">
+          <h1>Hubungi Kami</h1>
+          <p>Informasi Kontak dan Lokasi Balai Taman Nasional</p>
+        </div>
+      </section>
+
+      <article class="detail-content">
+        <h2>Informasi Kantor</h2>
+        <p>
+          Jika Anda memiliki pertanyaan lebih lanjut mengenai izin penelitian,
+          kerjasama, atau informasi lainnya di luar pendaftaran pendakian, Anda
+          dapat menghubungi kami melalui detail di bawah ini atau datang
+          langsung ke kantor kami pada jam kerja.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Detail Kontak</h3>
+            <ul>
+              <li>
+                <span>📍</span>
+                <div>
+                  <strong>Alamat:</strong><br />
+                  <a
+                    id="contact-address"
+                    href="https://www.google.com/maps/search/Jl.+Merbabu+No.132,+Dusun+II,+Kopeng,+Kec.+Getasan,+Kabupaten+Semarang,+Jawa+Tengah+50774+/@-7.4021605,110.3992948,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Jl. Merbabu No.132, Dusun II, Kopeng, Kec. Getasan,
+                    Kabupaten Semarang, Jawa Tengah 50774
+                  </a>
+                  <button class="copy-btn" data-copy-target="#contact-address">
+                    Salin
+                  </button>
+                </div>
+              </li>
+              <li>
+                <span>📞</span>
+                <div>
+                  <strong>Telepon:</strong><br />
+                  <a id="contact-phone" href="tel:0298328053">(0298) 318053</a>
+                  <button class="copy-btn" data-copy-target="#contact-phone">
+                    Salin
+                  </button>
+                </div>
+              </li>
+              <li>
+                <span>✉️</span>
+                <div>
+                  <strong>Email:</strong><br />
+                  <a id="contact-email" href="mailto:denisetiawannnn4@gmail.com"
+                    >denisetiawannnn4@gmail.com</a
+                  >
+                  <button class="copy-btn" data-copy-target="#contact-email">
+                    Salin
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="map-container">
+            <h3>Peta Lokasi</h3>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.517336829141!2d110.4371999147764!3d-7.518685194576353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a6f2963162383%3A0x448208453713f836!2sBalai%20Taman%20Nasional%20Gunung%20Merbabu!5e0!3m2!1sen!2sid!4v1687953658145!5m2!1sen!2sid"
+              width="100%"
+              height="350"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </article>
+
+      <footer>
+        <p>© 2025 Portal Informasi TNGM Merbabu. Dibuat oleh Deni Setiawan.</p>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const sidebar = document.querySelector(".sidebar");
+        const dropdownBtn = document.getElementById("jalur-dropdown-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (hamburgerBtn && sidebar) {
+          hamburgerBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            sidebar.classList.toggle("sidebar-visible");
+          });
+        }
+        if (dropdownBtn && dropdownContent) {
+          dropdownBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            dropdownContent.classList.toggle("show");
+          });
+        }
+        window.addEventListener("click", (event) => {
+          if (
+            sidebar &&
+            sidebar.classList.contains("sidebar-visible") &&
+            !sidebar.contains(event.target) &&
+            !hamburgerBtn.contains(event.target)
+          ) {
+            sidebar.classList.remove("sidebar-visible");
+          }
+          if (
+            dropdownContent &&
+            dropdownContent.classList.contains("show") &&
+            !dropdownBtn.contains(event.target)
+          ) {
+            dropdownContent.classList.remove("show");
+          }
+        });
+
+        const copyButtons = document.querySelectorAll(".copy-btn");
+        copyButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const targetSelector = button.dataset.copyTarget;
+            const targetElement = document.querySelector(targetSelector);
+            if (targetElement) {
+              const textToCopy = targetElement.innerText;
+              navigator.clipboard
+                .writeText(textToCopy)
+                .then(() => {
+                  const originalText = button.innerText;
+                  button.innerText = "Tersalin!";
+                  button.classList.add("copied");
+                  setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove("copied");
+                  }, 2000);
+                })
+                .catch((err) => {
+                  console.error("Gagal menyalin teks: ", err);
+                });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

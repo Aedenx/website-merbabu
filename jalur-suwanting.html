@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Jalur Suwanting - TNGM Merbabu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="header-logo">
+        <img src="images/Logo.jpg" alt="Logo TNGM" height="40" />
+        <h1>TAMAN NASIONAL GUNUNG MERBABU</h1>
+      </a>
+    </header>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#" class="sidebar-button">JALUR ▼</a>
+            <div class="dropdown-content">
+              <a href="jalur-selo.html">Jalur Selo</a>
+              <a href="jalur-suwanting.html">Jalur Suwanting</a>
+              <a href="jalur-wekas.html">Jalur Wekas</a>
+              <a href="jalur-thekelan.html">Jalur Thekelan</a>
+              <a href="jalur-cuntel.html">Jalur Cuntel</a>
+            </div>
+          </li>
+          <li><a href="simaksi.html" class="sidebar-button">SIMAKSI</a></li>
+          <li><a href="kontak.html" class="sidebar-button">KONTAK</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="page-hero" id="suwanting-hero">
+        <div class="hero-content">
+          <h1>Jalur Pendakian Suwanting</h1>
+          <p>
+            Dikenal dengan treknya yang menantang dan pemandangan hutan yang
+            masih rapat.
+          </p>
+        </div>
+      </section>
+
+      <article class="detail-content">
+        <h2>Deskripsi Umum Jalur Suwanting</h2>
+        <p>
+          Jalur Suwanting kembali dibuka pada tahun 2015 setelah lama tertidur.
+          Terletak di sisi barat Gunung Merbabu, tepatnya di Dusun Suwanting,
+          Desa Banyuroto, Magelang, jalur ini terkenal memiliki trek yang terus
+          menanjak dan menguji stamina. Meski begitu, pendaki akan disuguhi
+          pemandangan hutan yang lebat, padat, dan lebih sunyi dibandingkan
+          jalur lainnya.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h3>Informasi Kunci</h3>
+            <ul>
+              <li>
+                <strong>Lokasi Basecamp:</strong> Dusun Suwanting, Banyuroto,
+                Magelang.
+              </li>
+              <li><strong>Tingkat Kesulitan:</strong> Menengah - Mahir.</li>
+              <li><strong>Estimasi Waktu Naik:</strong> 8-11 jam.</li>
+              <li><strong>Sumber Air:</strong> Pos 2 dan Pos 3.</li>
+              <li>
+                <strong>Atraksi Utama:</strong> Hutan Lementung, Lembah Manding,
+                Puncak Suwanting.
+              </li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h3>Peta Jalur</h3>
+            <img
+              src="images/Jalur-Suwanting.jpeg"
+              alt="Peta Jalur Pendakian Suwanting"
+              class="peta-jalur"
+            />
+          </div>
+        </div>
+
+        <div class="time-calculator">
+          <h4>Kalkulator Estimasi Waktu</h4>
+          <p>
+            Pilih kecepatan mendaki Anda untuk mendapatkan estimasi waktu yang
+            lebih personal.
+          </p>
+          <label for="paceSelect">Kecepatan Mendaki:</label>
+          <select id="paceSelect">
+            <option value="normal">Normal (Sesuai Estimasi Umum)</option>
+            <option value="santai">Santai (Lebih banyak istirahat)</option>
+            <option value="cepat">Cepat (Berpengalaman)</option>
+          </select>
+          <button id="calculateBtn">Hitung</button>
+          <p id="hasilEstimasi">Hasil estimasi akan muncul di sini.</p>
+        </div>
+        <h3>Rute Pendakian (Pos ke Pos)</h3>
+        <p>
+          Pendakian dimulai dari Basecamp Suwanting menuju Pos 1 (Lembah
+          Lempong), dilanjutkan ke Pos 2 (Lembah Mitoh), dan Pos 3 (Lembah
+          Manding) yang merupakan area camp favorit. Setelah itu, perjalanan
+          akan semakin terjal melewati tanjakan menuju Puncak Suwanting sebelum
+          akhirnya bertemu dengan jalur Selo di area puncak utama.
+        </p>
+      </article>
+
+      <footer>
+        <p>
+          &copy; 2025 Portal Informasi TNGM Merbabu. Dibuat oleh Deni Setiawan.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const paceSelect = document.getElementById("paceSelect");
+        const calculateBtn = document.getElementById("calculateBtn");
+        const hasilEstimasi = document.getElementById("hasilEstimasi");
+
+        calculateBtn.addEventListener("click", () => {
+          const baseTime = 9.5;
+          const selectedPace = paceSelect.value;
+          let finalTime;
+
+          switch (selectedPace) {
+            case "santai":
+              finalTime = baseTime * 1.25; 
+              break;
+            case "cepat":
+              finalTime = baseTime * 0.8; 
+              break;
+            case "normal":
+            default:
+              finalTime = baseTime;
+              break;
+          }
+
+          const hours = Math.floor(finalTime);
+          const minutes = Math.round((finalTime - hours) * 60);
+
+          hasilEstimasi.textContent = `Estimasi waktu pendakian Anda: sekitar ${hours} jam ${minutes} menit.`;
+          hasilEstimasi.style.color = "#2c5e4c"; 
+        });
+      });
+    </script>
+  </body>
+</html>

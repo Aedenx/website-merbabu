@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Jalur Cuntel - TNGM Merbabu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="header-logo">
+        <img src="images/Logo.jpg" alt="Logo TNGM" height="40" />
+        <h1>TAMAN NASIONAL GUNUNG MERBABU</h1>
+      </a>
+    </header>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#" class="sidebar-button">JALUR ▼</a>
+            <div class="dropdown-content">
+              <a href="jalur-selo.html">Jalur Selo</a>
+              <a href="jalur-suwanting.html">Jalur Suwanting</a>
+              <a href="jalur-wekas.html">Jalur Wekas</a>
+              <a href="jalur-thekelan.html">Jalur Thekelan</a>
+              <a href="jalur-cuntel.html">Jalur Cuntel</a>
+            </div>
+          </li>
+          <li><a href="simaksi.html" class="sidebar-button">SIMAKSI</a></li>
+          <li><a href="kontak.html" class="sidebar-button">KONTAK</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="page-hero" id="cuntel-hero">
+        <div class="hero-content">
+          <h1>Jalur Pendakian Cuntel</h1>
+          <p>
+            Jalur klasik via Kopeng dengan tanjakan awalnya yang menjadi ciri
+            khas.
+          </p>
+        </div>
+      </section>
+
+      <article class="detail-content">
+        <h2>Deskripsi Umum Jalur Cuntel</h2>
+        <p>
+          Berlokasi tidak jauh dari Thekelan, Jalur Cuntel adalah salah satu
+          pintu masuk pendakian Merbabu dari sisi utara. Jalur ini dikenal
+          memiliki tanjakan yang cukup curam di awal perjalanan yang sering
+          disebut 'Tanjakan PHP' oleh para pendaki. Meskipun menantang di awal,
+          jalur ini menawarkan pemandangan yang indah dan trek yang lebih landai
+          setelah melewati pos bayangan.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h3>Informasi Kunci</h3>
+            <ul>
+              <li>
+                <strong>Lokasi Basecamp:</strong> Dusun Cuntel, Kopeng, Getasan,
+                Semarang.
+              </li>
+              <li><strong>Tingkat Kesulitan:</strong> Menengah.</li>
+              <li><strong>Estimasi Waktu Naik:</strong> 7-8 jam.</li>
+              <li>
+                <strong>Sumber Air:</strong> Terdapat di beberapa titik sebelum
+                Pos 3.
+              </li>
+              <li>
+                <strong>Atraksi Utama:</strong> Tanjakan PHP, Pos Bayangan.
+              </li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h3>Peta Jalur</h3>
+            <img
+              src="images/Jalur-Cuntel.jpeg"
+              alt="Peta Jalur Pendakian Cuntel"
+              class="peta-jalur"
+            />
+          </div>
+        </div>
+
+        <div class="time-calculator">
+          <h4>Kalkulator Estimasi Waktu</h4>
+          <p>
+            Pilih kecepatan mendaki Anda untuk mendapatkan estimasi waktu yang
+            lebih personal.
+          </p>
+          <label for="paceSelect">Kecepatan Mendaki:</label>
+          <select id="paceSelect">
+            <option value="normal">Normal (Sesuai Estimasi Umum)</option>
+            <option value="santai">Santai (Lebih banyak istirahat)</option>
+            <option value="cepat">Cepat (Berpengalaman)</option>
+          </select>
+          <button id="calculateBtn">Hitung</button>
+          <p id="hasilEstimasi">Hasil estimasi akan muncul di sini.</p>
+        </div>
+        <h3>Rute Pendakian (Pos ke Pos)</h3>
+        <p>
+          Awal pendakian dari basecamp Cuntel akan langsung dihadapkan pada
+          tanjakan terjal hingga Pos 1. Perjalanan selanjutnya menuju Pos 2, Pos
+          3, dan Pos Bayangan memiliki medan yang bervariasi antara hutan dan
+          sedikit area terbuka. Jalur Cuntel nantinya akan bertemu dengan jalur
+          utara lainnya sebelum mencapai area puncak Merbabu.
+        </p>
+      </article>
+
+      <footer>
+        <p>
+          &copy; 2025 Portal Informasi TNGM Merbabu. Dibuat oleh Deni Setiawan.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const paceSelect = document.getElementById("paceSelect");
+        const calculateBtn = document.getElementById("calculateBtn");
+        const hasilEstimasi = document.getElementById("hasilEstimasi");
+
+        calculateBtn.addEventListener("click", () => {
+          const baseTime = 7.5;
+          const selectedPace = paceSelect.value;
+          let finalTime;
+
+          switch (selectedPace) {
+            case "santai":
+              finalTime = baseTime * 1.25; 
+              break;
+            case "cepat":
+              finalTime = baseTime * 0.8; 
+              break;
+            case "normal":
+            default:
+              finalTime = baseTime;
+              break;
+          }
+
+          const hours = Math.floor(finalTime);
+          const minutes = Math.round((finalTime - hours) * 60);
+
+          hasilEstimasi.textContent = `Estimasi waktu pendakian Anda: sekitar ${hours} jam ${minutes} menit.`;
+          hasilEstimasi.style.color = "#2c5e4c"; 
+        });
+      });
+    </script>
+  </body>
+</html>

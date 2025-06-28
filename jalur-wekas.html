@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Jalur Wekas - TNGM Merbabu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="header-logo">
+        <img src="images/Logo.jpg" alt="Logo TNGM" height="40" />
+        <h1>TAMAN NASIONAL GUNUNG MERBABU</h1>
+      </a>
+    </header>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#" class="sidebar-button">JALUR ▼</a>
+            <div class="dropdown-content">
+              <a href="jalur-selo.html">Jalur Selo</a>
+              <a href="jalur-suwanting.html">Jalur Suwanting</a>
+              <a href="jalur-wekas.html">Jalur Wekas</a>
+              <a href="jalur-thekelan.html">Jalur Thekelan</a>
+              <a href="jalur-cuntel.html">Jalur Cuntel</a>
+            </div>
+          </li>
+          <li><a href="simaksi.html" class="sidebar-button">SIMAKSI</a></li>
+          <li><a href="kontak.html" class="sidebar-button">KONTAK</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="page-hero" id="wekas-hero">
+        <div class="hero-content">
+          <h1>Jalur Pendakian Wekas</h1>
+          <p>
+            Jalur terpendek dan favorit bagi para pendaki dengan target waktu
+            yang cepat.
+          </p>
+        </div>
+      </section>
+
+      <article class="detail-content">
+        <h2>Deskripsi Umum Jalur Wekas</h2>
+        <p>
+          Jalur Wekas dikenal sebagai jalur "Tektok" (naik-turun dalam satu
+          hari) favorit karena memiliki jarak tempuh terpendek dibandingkan
+          jalur lainnya. Berada di Dusun Candi, Desa Kaponan, Magelang, jalur
+          ini menyajikan trek yang didominasi oleh hutan pinus yang teduh hingga
+          mencapai area persimpangan menuju puncak. Karena singkatnya jalur,
+          sumber air tidak ditemukan di sepanjang perjalanan sehingga persiapan
+          logistik air harus dimaksimalkan dari basecamp.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h3>Informasi Kunci</h3>
+            <ul>
+              <li>
+                <strong>Lokasi Basecamp:</strong> Dusun Candi, Kaponan, Pakis,
+                Magelang.
+              </li>
+              <li><strong>Tingkat Kesulitan:</strong> Pemula.</li>
+              <li><strong>Estimasi Waktu Naik:</strong> 5-7 jam.</li>
+              <li>
+                <strong>Sumber Air:</strong> Tidak ada di sepanjang jalur, wajib
+                bawa dari basecamp.
+              </li>
+              <li>
+                <strong>Atraksi Utama:</strong> Hutan Pinus, Puncak Syarif.
+              </li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h3>Peta Jalur</h3>
+            <img
+              src="images/Jalur-Wekas.jpeg"
+              alt="Peta Jalur Pendakian Wekas"
+              class="peta-jalur"
+            />
+          </div>
+        </div>
+
+        <div class="time-calculator">
+          <h4>Kalkulator Estimasi Waktu</h4>
+          <p>
+            Pilih kecepatan mendaki Anda untuk mendapatkan estimasi waktu yang
+            lebih personal.
+          </p>
+          <label for="paceSelect">Kecepatan Mendaki:</label>
+          <select id="paceSelect">
+            <option value="normal">Normal (Sesuai Estimasi Umum)</option>
+            <option value="santai">Santai (Lebih banyak istirahat)</option>
+            <option value="cepat">Cepat (Berpengalaman)</option>
+          </select>
+          <button id="calculateBtn">Hitung</button>
+          <p id="hasilEstimasi">Hasil estimasi akan muncul di sini.</p>
+        </div>
+        <h3>Rute Pendakian (Pos ke Pos)</h3>
+        <p>
+          Pendakian dari basecamp Wekas menuju Pos 1 dan Pos 2 didominasi oleh
+          hutan pinus yang rapat. Jalur ini cenderung lurus dan terus menanjak
+          tanpa banyak bonus. Selepas Pos 2, pendaki akan bertemu dengan
+          persimpangan jalur Thekelan sebelum melanjutkan perjalanan menuju area
+          puncak. Puncak terdekat yang bisa dicapai dari jalur ini adalah Puncak
+          Syarif.
+        </p>
+      </article>
+
+      <footer>
+        <p>
+          &copy; 2025 Portal Informasi TNGM Merbabu. Dibuat oleh Deni Setiawan.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const paceSelect = document.getElementById("paceSelect");
+        const calculateBtn = document.getElementById("calculateBtn");
+        const hasilEstimasi = document.getElementById("hasilEstimasi");
+
+        calculateBtn.addEventListener("click", () => {
+          const baseTime = 6;
+          const selectedPace = paceSelect.value;
+          let finalTime;
+
+          switch (selectedPace) {
+            case "santai":
+              finalTime = baseTime * 1.25; 
+              break;
+            case "cepat":
+              finalTime = baseTime * 0.8; 
+              break;
+            case "normal":
+            default:
+              finalTime = baseTime;
+              break;
+          }
+
+          const hours = Math.floor(finalTime);
+          const minutes = Math.round((finalTime - hours) * 60);
+
+          hasilEstimasi.textContent = `Estimasi waktu pendakian Anda: sekitar ${hours} jam ${minutes} menit.`;
+          hasilEstimasi.style.color = "#2c5e4c";
+        });
+      });
+    </script>
+  </body>
+</html>
